@@ -11,7 +11,7 @@ class vimshottari:
     def __init__(self, date_of_birth, moon):
         self.date_of_birth = date_of_birth
         self.moon = moon
-        self.total_vimshottari_dasha_seconds = 120 * 365 * 86400
+        self.total_vimshottari_dasha_seconds = (120 * 365 + 29) * 86400
         self.max_level = 6
         
     @property

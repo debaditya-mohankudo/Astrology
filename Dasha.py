@@ -7,7 +7,7 @@ class Dasha:
                  prev_dasha_sequence=None):
         self.dasha_no = dasha_no
         self.dasha_begins = dasha_begins
-        self.total_period = 120 * 365 # dasha period calculated from dasha sequence
+        self.total_period = 120 * 365 + 29 # dasha period calculated from dasha sequence
         if prev_dasha_sequence is not None:
             self._dasha_sequence = prev_dasha_sequence
         else:
