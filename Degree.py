@@ -3,7 +3,7 @@ class Degree:
         self.degree = degree
         self.minute = minute
         self.second = second
-        
+
     @property
     def degree_in_seconds(self):
         self._degree_in_seconds = self.degree * 3600 + self.minute * 60 + self.second
@@ -22,7 +22,6 @@ class Degree:
         diff = self.degree_in_seconds - x.degree_in_seconds
         return self.seconds_to_dms(diff)
           
-    
     def __add__(self, x):
         sum = self.degree_in_seconds + x.degree_in_seconds
         return self.seconds_to_dms(sum)
@@ -31,5 +30,8 @@ class Degree:
         sum = self.degree_in_seconds * n
         return self.seconds_to_dms(sum)
     
+    def __mod__(self, x):
+        return self.seconds_to_dms(self.degree_in_seconds % x.degree_in_seconds)
+
     def __str__(self):
         return str(self.degree) + ',' + str(self.minute) + ',' +  str(self.second)
