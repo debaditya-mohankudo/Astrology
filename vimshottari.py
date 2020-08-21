@@ -5,6 +5,7 @@ from Degree import Degree
 from Dasha import Dasha
 from mahadasha_config import mahadasha_number_planet_mapping
 from mahadasha_config import mahadasha_days
+from mahadasha_config import max_level
 
 
 class vimshottari:
@@ -12,7 +13,7 @@ class vimshottari:
         self.date_of_birth = date_of_birth
         self.moon = moon
         self.total_vimshottari_dasha_seconds = (120 * 365 + 29) * 86400
-        self.max_level = 6
+        self.max_level = max_level
         
     @property
     def mahadasha_no_at_birth(self):
