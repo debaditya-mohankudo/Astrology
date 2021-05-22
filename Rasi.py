@@ -4,6 +4,7 @@ from math import ceil
 from mahadasha_config import nakhetra_number_mapping
 class Rasi:
     spread = Degree(30, 0, 0)
+    total_no_rasi = 12
     
     def __init__(self, rasi_number=None, rasi_degree=None):
         self.number = rasi_number
@@ -26,21 +27,6 @@ class Rasi:
         pada_degree = self.degree % Degree(3, 20, 0)
         return Nakhetra(nakhetra_number, pada_number, pada_degree)
         
-    def to_navamsha(self):
-        padas_covered_till_rasi = (self.number - 1) * 9
-        max_degree_pada = Degree(30, 0, 0) * (1/9)
-        padas_covered_in_rasi = ceil(self.degree / max_degree_pada)
-        self.pada_number = padas_covered_till_rasi + padas_covered_in_rasi
-        self.navamsha_number = self.pada_number % 12
-        if self.navamsha_number == 0:
-            self.navamsha_number = 12
-        
-        ## self.navamsha_nakhetra_pada_degree = self.degree % max_degree_pada
-        ## self.padas_covered_in_navamsha_nakhetra = ceil( self.navamsha_nakhetra_pada_degree / (Degree(3, 20, 0) * (1/9)) )
-        
-        ## self.navamsha_nakhetra_padas = (self.navamsha_number - 1) * 9 + self.padas_covered_in_navamsha_nakhetra
-        ## self.navamsha_nakhetra_number = ceil(self.navamsha_nakhetra_padas / 4)
-        ## self.navamsha_nakhetra = nakhetra_number_mapping[self.navamsha_nakhetra_number]
     
     @property
     def abs_degree(self):
