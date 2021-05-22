@@ -3,6 +3,8 @@ from Nakhetra import Nakhetra
 from math import ceil
 from mahadasha_config import nakhetra_number_mapping
 class Rasi:
+    spread = Degree(30, 0, 0)
+    
     def __init__(self, rasi_number=None, rasi_degree=None):
         self.number = rasi_number
         self.degree = rasi_degree
