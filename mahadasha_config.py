@@ -50,4 +50,6 @@ nakhetra_number_mapping = {
     26: 'U Bhadrapada',
     27: 'Revati'
 }
+
 max_level = 5
+total_vimshottari_mahadasha_seconds = (120 * 365 + 29) * 86400
