@@ -1,8 +1,10 @@
+from NakhetraPada import NPada
 from mahadasha_config import nakhetra_number_mapping
 class Nakhetra:
     def __init__(self, nakhetra_number, nakhetra_pada_number, pada_degree=None):
         self.number = nakhetra_number
-        self.pada_number = nakhetra_pada_number
+        self.pada = NPada(nakhetra_pada_number)
+        self.pada_number = self.pada.pada_no
         self.pada_degree = pada_degree
     
 
