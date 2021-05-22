@@ -1,6 +1,5 @@
-import datetime
-from datetime import timedelta
 
+from datetime import timedelta
 from Degree import Degree
 from Dasha import Dasha
 from mahadasha_config import mahadasha_number_planet_mapping
@@ -25,7 +24,7 @@ class vimshottari:
     @property
     def dasha_degrees_remaining_fraction(self):
         tot_abs_degree =  Degree(13, 20, 0) * self.moon.nakhetra.number
-        moon_abs_degree =  Degree(30, 0, 0) * (self.moon.rasi.number -1) + self.moon.rasi.degree
+        moon_abs_degree =  self.moon.rasi.get_abs_degree()
         nakhetra_degree = Degree(13, 20, 0)
         return (tot_abs_degree - moon_abs_degree) / nakhetra_degree
     

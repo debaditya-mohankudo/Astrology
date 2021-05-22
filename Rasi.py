@@ -9,8 +9,11 @@ class Rasi:
         self.__max_spread = Degree(30, 0, 0)
         
     def from_abs_degree(self, abs_degree):
-        self.number = (abs_degree.degree // self.max_spread.degree) + 1
+        self.number = ceil(abs_degree.degree / self.max_spread.degree)
         self.degree = abs_degree % self.max_spread
+    
+    def get_abs_degree(self):
+        return self.__max_spread * (self.number - 1) + self.degree
     
     def to_nakhetra(self):
         padas_covered = (self.number - 1) * 9 + ceil(self.degree / Degree(3, 20, 0))
