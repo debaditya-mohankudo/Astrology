@@ -33,12 +33,12 @@ class Rasi:
         if self.navamsha_number == 0:
             self.navamsha_number = 12
         
-        self.navamsha_nakhetra_pada_degree = self.degree % max_degree_pada
-        self.padas_covered_in_navamsha_nakhetra = ceil( self.navamsha_nakhetra_pada_degree / (Degree(3, 20, 0) * (1/9)) )
+        ## self.navamsha_nakhetra_pada_degree = self.degree % max_degree_pada
+        ## self.padas_covered_in_navamsha_nakhetra = ceil( self.navamsha_nakhetra_pada_degree / (Degree(3, 20, 0) * (1/9)) )
         
-        self.navamsha_nakhetra_padas = (self.navamsha_number - 1) * 9 + self.padas_covered_in_navamsha_nakhetra
-        self.navamsha_nakhetra_number = ceil(self.navamsha_nakhetra_padas / 4)
-        self.navamsha_nakhetra = nakhetra_number_mapping[self.navamsha_nakhetra_number]
+        ## self.navamsha_nakhetra_padas = (self.navamsha_number - 1) * 9 + self.padas_covered_in_navamsha_nakhetra
+        ## self.navamsha_nakhetra_number = ceil(self.navamsha_nakhetra_padas / 4)
+        ## self.navamsha_nakhetra = nakhetra_number_mapping[self.navamsha_nakhetra_number]
     
     @property
     def abs_degree(self):
